@@ -135,7 +135,7 @@ section.sec_title {
   width: 60px;
   height: 60px;
   background-color: transparent;
-  border: 4px solid rgba(255, 255, 255, 0.108);
+  border: 4px solid rgba(255, 255, 255, 0.173);
 }
 
 .box div:nth-child(1) {
@@ -155,6 +155,8 @@ section.sec_title {
   animation: moov 9s linear infinite;
 }
 .box div:nth-child(4) {
+  width: 30px;
+  height: 30px;
   top: 20%;
   left: 60%;
   animation: moov 10s linear infinite;
@@ -176,17 +178,20 @@ section.sec_title {
 }
 .box div:nth-child(8) {
   border-radius: 100%;
-
   top: 32%;
   left: 25%;
   animation: moov 16s linear infinite;
 }
 .box div:nth-child(9) {
+  width: 30px;
+  height: 30px;
   top: 83%;
   left: 32%;
   animation: moovLeft 9s linear infinite;
 }
 .box div:nth-child(10) {
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
   top: 20%;
   left: 80%;
@@ -314,6 +319,55 @@ section.sec_title {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+}
+.about {
+  width: 100%;
+  height: 100vh;
+  background-image: url("./Assets/AboutBG.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  padding: 150px 30px 0;
+}
+.about figure {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 100px; */
+  /* border: 5px solid red; */
+  padding: 10px;
+}
+.about figure img {
+  width: 100%;
+  animation: imgmoov 1.5s alternate infinite;
+}
+@keyframes imgmoov {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+.about figcaption {
+  width: 50%;
+  /* border: 5px solid red; */
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.about figcaption h1 {
+  font-size: 50px;
+  color: #101b3b;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+.about figcaption p {
+  letter-spacing: 1.15px;
 }
 
 /* 100% Image Width on Smaller Screens */
