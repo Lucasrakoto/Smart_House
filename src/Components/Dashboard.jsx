@@ -3,6 +3,7 @@ import logo from "../Assets/ispm.png";
 import { FaSignOutAlt, FaHome, FaLightbulb, FaIdCard } from "react-icons/fa";
 import DHome from "./Dashboard/DHome";
 import DJiro from "./Dashboard/DJiro";
+import Led from "./Led";
 
 export default function Dashboard(props) {
   const logouty = () => {
@@ -38,7 +39,8 @@ export default function Dashboard(props) {
       </aside>
       <section className="view_dashboard">
         {/* <DHome /> */}
-        <DJiro />
+        {/* <DJiro /> */}
+        <Led />
       </section>
       <aside className="right"></aside>
     </div>

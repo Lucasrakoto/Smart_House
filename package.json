@@ -8,6 +8,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "aos": "^3.0.0-beta.6",
+    "axios": "^1.5.1",
+    "path-browserify": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
@@ -15,9 +17,11 @@
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
     "react-tsparticles": "^2.12.2",
+    "serialport": "^12.0.0",
     "swiper": "^10.0.3",
     "tsparticles-slim": "^2.12.0",
     "typed.js": "^2.0.16",
+    "util": "^0.12.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -46,5 +50,10 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  },
+  "browser": {
+    "fs": false,
+    "child_process": false
   }
 }
+

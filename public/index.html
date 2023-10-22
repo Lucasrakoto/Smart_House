@@ -27,42 +27,16 @@
     -->
     <!-- <script src="../src/dist/aos.js"></script> -->
     <title>SMART HOUSE</title>
-    <script>
-      function afficherDateEtHeure() {
-        var date = new Date();
-
-        var optionsDate = {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        };
-        var dateFormatted = date.toLocaleDateString([], optionsDate);
-
-        var optionsHeure = { hour: "2-digit", minute: "2-digit" };
-        var heureFormatted = date.toLocaleTimeString([], optionsHeure);
-
-        document.getElementById("date").innerHTML = dateFormatted;
-        document.getElementById("heure").innerHTML = heureFormatted;
-      }
-
-      setInterval(afficherDateEtHeure, 1000);
-
+    <!-- <script>
       var chambreValue = "";
       function showSelectedOption() {
-        <!-- document.getElementById("etat1").innerHTML = "Etteint";
-        document.getElementById("etat2").innerHTML = "Etteint";
-        document.getElementById("etat3").innerHTML = "Etteint";
-        document.getElementById("etat4").innerHTML = "Etteint"; -->
-
         var radioButtons = document.getElementsByName("option");
+
         for (var i = 0; i < radioButtons.length; i++) {
           radioButtons[i].addEventListener("change", function () {
             var selectedOption = this.value;
             if (selectedOption !== "") {
               alert(selectedOption);
-              document.getElementById("piece").innerHTML = selectedOption;
-
               chambreValue = selectedOption;
             } else {
               alert("");
@@ -71,16 +45,6 @@
         }
       }
 
-      // var exit = document.getElementById("sortirPiece");
-      // exit.addEventListener("click", function () {
-      //   document.getElementById("piece").innerHTML = "";
-      // });
-
-      const exit = () => {
-        document.getElementById("piece").innerHTML = "";
-        chambreValue = "";
-      };
-
       document.addEventListener("DOMContentLoaded", function () {
         var rangeInput = document.getElementById("myRange");
         var rangeValue = document.getElementById("rangeValue");
@@ -88,12 +52,11 @@
         rangeInput.addEventListener("input", function () {
           //console.log(rangeInput.value);
           var xhr = new XMLHttpRequest();
-          xhr.open("GET", "http://192.168.63.208/" + rangeInput.value);
+          xhr.open("GET", "http://192.168.43.40/" + rangeInput.value);
           xhr.send();
         });
-        document.getElementById("rangeValue").innerHTML = rangeInput.value;
       });
-    </script>
+    </script> -->
   </head>
   <body id="__body">
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -114,55 +77,31 @@
         aaa.style.overflow = "auto";
       }, 4900);
     </script>
-    <script>
+    <!-- <script>
       showSelectedOption();
-
       function sendClose() {
-        // e.preventDefault();
         var xhr = new XMLHttpRequest();
         if (chambreValue == "") {
           alert("Veuiller selectionner une chambre");
         } else if (chambreValue == "salon") {
           //alert("Manidy jiro"+chambreValue);
-          xhr.open("GET", "http://192.168.63.208/fffoff1");
-          document.getElementById("etat1").innerHTML = "Etteint";
+          xhr.open("GET", "http://192.168.43.40/manidySalon");
         } else if (chambreValue == "cuisine") {
           //alert("Manidy jiro"+chambreValue);
-          xhr.open("GET", "http://192.168.63.208/fffoff2");
-          document.getElementById("etat2").innerHTML = "Etteint";
-        } else if (chambreValue == "chambre1") {
-          //alert("Manidy jiro"+chambreValue);
-          xhr.open("GET", "http://192.168.63.208/fffoff3");
-          document.getElementById("etat3").innerHTML = "Etteint";
-        } else if (chambreValue == "chambre2") {
-          //alert("Manidy jiro"+chambreValue);
-          xhr.open("GET", "http://192.168.63.208/fffoff4");
-          document.getElementById("etat4").innerHTML = "Etteint";
+          xhr.open("GET", "http://192.168.43.40/manidyCuisine");
         }
         xhr.send();
       }
       function sendOpen() {
-        // e.preventDefault();
-
         var xhr = new XMLHttpRequest();
         if (chambreValue == "") {
           alert("Veuiller selectionner une chambre");
         } else if (chambreValue == "salon") {
           //alert("Mandrehitra jiro"+chambreValue);
-          xhr.open("GET", "http://192.168.8.100/fffon1");
-          document.getElementById("etat1").innerHTML = "Allumer";
+          xhr.open("GET", "http://192.168.43.40/mandrehitraSalon");
         } else if (chambreValue == "cuisine") {
           //alert("Mandrehitra jiro"+chambreValue);
-          xhr.open("GET", "http://192.168.8.100/fffon2");
-          document.getElementById("etat2").innerHTML = "Allumer";
-        } else if (chambreValue == "chambre1") {
-          //alert("Mandrehitra jiro"+chambreValue);
-          xhr.open("GET", "http://192.168.8.100/fffon3");
-          document.getElementById("etat3").innerHTML = "Allumer";
-        } else if (chambreValue == "chambre2") {
-          //alert("Mandrehitra jiro"+chambreValue);
-          xhr.open("GET", "http://192.168.8.100/fffon4");
-          document.getElementById("etat4").innerHTML = "Allumer";
+          xhr.open("GET", "http://192.168.43.40/mandrehitraCuisine");
         }
         xhr.send();
       }
@@ -170,6 +109,6 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> -->
   </body>
 </html>

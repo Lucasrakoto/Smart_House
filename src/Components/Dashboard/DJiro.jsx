@@ -1,53 +1,61 @@
 import React from "react";
-
+import donne from "../../Assets/js/rfid";
 export default function DJiro() {
+  const affiche = () => {
+    console.log(donne.data);
+  };
   return (
     <div className="djiro">
-      <form action="#">
-        <ul>
-          <li>
-            <input id="salon" type="radio" name="option" value="salon" />
-            <label for="salon">
-              <h1>Piece 1</h1>
-            </label>
-            <p id="etat1"></p>
-          </li>
-          <li>
-            <input id="room1" type="radio" name="option" value="chambre1" />
-            <label for="room1">
-              <h1>Piece 2</h1>
-            </label>
-            <p id="etat3"></p>
-          </li>
-          <li>
-            <input id="cuisine" type="radio" name="option" value="cuisine" />
-            <label for="cuisine">
-              <h1>Piece 3</h1>
-            </label>
-            <p id="etat2"></p>
-          </li>
+      <button onClick={affiche}>CLIK</button>
+      {/* <section>
+        <div className="container">
+          <div className="coupure">
+            <h2>Coupure</h2>
+          </div>
 
-          <li>
-            <input id="room2" type="radio" name="option" value="chambre2" />
-            <label for="room2">
-              <h1>Piece 4 </h1>
-            </label>
-            <p id="etat4"></p>
-          </li>
-        </ul>
-        <div class="btn">
-          <button class="button" onclick="sendOpen()" type="button">
-            ON
-          </button>
-          <button class="buttonOff" onclick="sendClose()" type="button">
-            OFF
-          </button>
-          {/* <input type="range" id="myRange" min="0" max="180" value="50" /> */}
+          <div className="bloc2">
+            <div className="bloc3">
+              <div className="bloc4">
+                <form action="#">
+                  <div className="bloc5">
+                    <button onclick="sendOpen()" type="button">
+                      Remettre
+                    </button>
+                    <button onclick="sendClose()" type="button">
+                      Couper
+                    </button>
+                    <input
+                      type="range"
+                      id="myRange"
+                      min="0"
+                      max="100"
+                      value="50"
+                    ></input>{" "}
+                    <p id="rangeValue">a</p>
+                  </div>
+                  <div className="bloc6">
+                    <div class="form-group">
+                      <button type="submit">Liste des modules</button>
+                      <ul>
+                        <li>
+                          <input type="radio" name="option" value="salon" />
+                          Salon
+                          <br />
+                        </li>
+                        <li>
+                          <input type="radio" name="option" value="cuisine" />
+                          Cuisine
+                          <br />
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-        {/* <button type="reset" class="reset" id="sortirPiece" onclick="exit()">
-          Sortir de la piece <span id="piece"></span>
-        </button> */}
-      </form>
+      </section> */}
     </div>
   );
 }
