@@ -88,7 +88,7 @@
         rangeInput.addEventListener("input", function () {
           //console.log(rangeInput.value);
           var xhr = new XMLHttpRequest();
-          xhr.open("GET", "http://192.168.8.100/" + rangeInput.value);
+          xhr.open("GET", "http://192.168.63.208/" + rangeInput.value);
           xhr.send();
         });
         document.getElementById("rangeValue").innerHTML = rangeInput.value;
@@ -124,19 +124,19 @@
           alert("Veuiller selectionner une chambre");
         } else if (chambreValue == "salon") {
           //alert("Manidy jiro"+chambreValue);
-          xhr.open("GET", "http://192.168.8.100/fffoff1");
+          xhr.open("GET", "http://192.168.63.208/fffoff1");
           document.getElementById("etat1").innerHTML = "Etteint";
         } else if (chambreValue == "cuisine") {
           //alert("Manidy jiro"+chambreValue);
-          xhr.open("GET", "http://192.168.8.100/fffoff2");
+          xhr.open("GET", "http://192.168.63.208/fffoff2");
           document.getElementById("etat2").innerHTML = "Etteint";
         } else if (chambreValue == "chambre1") {
           //alert("Manidy jiro"+chambreValue);
-          xhr.open("GET", "http://192.168.8.100/fffoff3");
+          xhr.open("GET", "http://192.168.63.208/fffoff3");
           document.getElementById("etat3").innerHTML = "Etteint";
         } else if (chambreValue == "chambre2") {
           //alert("Manidy jiro"+chambreValue);
-          xhr.open("GET", "http://192.168.8.100/fffoff4");
+          xhr.open("GET", "http://192.168.63.208/fffoff4");
           document.getElementById("etat4").innerHTML = "Etteint";
         }
         xhr.send();
