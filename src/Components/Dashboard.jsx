@@ -2,8 +2,13 @@ import React from "react";
 import logo from "../Assets/ispm.png";
 import { FaSignOutAlt, FaHome, FaLightbulb, FaIdCard } from "react-icons/fa";
 import DHome from "./Dashboard/DHome";
+import DJiro from "./Dashboard/DJiro";
 
-export default function Dashboard() {
+export default function Dashboard(props) {
+  const logouty = () => {
+    alert(props.aove);
+    props.setProps();
+  };
   return (
     <div className="dashboard">
       <aside className="left">
@@ -26,14 +31,16 @@ export default function Dashboard() {
             </li>
             <li>
               <FaSignOutAlt className="icn" />
-              <a href="">Logout</a>
+              <button onClick={logouty}>Logout</button>
             </li>
           </ul>
         </nav>
       </aside>
       <section className="view_dashboard">
-        <DHome />
+        {/* <DHome /> */}
+        <DJiro />
       </section>
+      <aside className="right"></aside>
     </div>
   );
 }

@@ -3,8 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 import logo from "../Assets/ispm.png";
 import logohome from "../Assets/logohome.jpg";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dashboard from "./Dashboard";
 
-export default function Home() {
+export default function Home(props) {
   const el = useRef(null);
   const [className, setClassName] = useState("modal");
   const [username, setUserName] = useState("");
@@ -53,6 +55,7 @@ export default function Home() {
       setTimeout(() => {
         closeModal();
         alert("Welcome  " + username);
+        // props.setProps(true);
       }, 2000);
     } else {
       alert("non nefa");
@@ -65,6 +68,10 @@ export default function Home() {
       setUserName("");
       setMdp("");
     }, 1000);
+  };
+  const changeAo = () => {
+    props.setProps();
+    alert(props.aove);
   };
   return (
     <div className="home">
@@ -88,7 +95,8 @@ export default function Home() {
           </li>
           {isLoggedIn && (
             <li>
-              <a href="#_Dashboard">Dashboard</a>
+              <button onClick={changeAo}>Dashboard</button>
+              {/* <button onClick={changeAo}>Dashboard</button> */}
             </li>
           )}
         </ul>

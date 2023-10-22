@@ -29,7 +29,7 @@ export default function DHome() {
         </ul>
       </section>
       <section className="rfid_state">
-        <h2>Acces Management View</h2>
+        <h2>Acces management view : Person actif</h2>
         <ul className="list_person">
           <li className="person">
             <figure>
