@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Img from "../Assets/rectangle.png";
+import boky from "../Assets/smartHouse.pdf";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function About() {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
-    <div className="about">
-      <figure>
+    <div id="_About" className="about">
+      <figure data-aos="fade-right">
         <img src={Img} alt="" />
       </figure>
-      <figcaption>
-        <h1>About the project</h1>
-        <p>
+      <figcaption data-aos="fade-up">
+        <h1 data-aos="fade-up">About the project</h1>
+        <p data-aos="fade-up">
           A smart house, often referred to as a smart home, represents a
           cutting-edge evolution in residential living. It integrates advanced
           technology and automation into various aspects of everyday life,
@@ -18,15 +25,11 @@ export default function About() {
           an environment that can be controlled remotely, adapt to your needs,
           and respond intelligently to changing circumstances. These homes are
           designed to simplify daily tasks, enhance the quality of life, and
-          even reduce energy consumption. They can include features such as
-          voice-activated virtual assistants, smart lighting, climate control,
-          home security systems, and entertainment setups, all seamlessly
-          integrated into one cohesive system. Smart houses are highly
-          customizable, allowing residents to tailor their living space to their
-          preferences and needs, whether that involves controlling the lights
-          with a voice command, checking security cameras from a mobile app, or
-          optimizing heating and cooling systems for energy savings.
+          even reduce energy consumption.
         </p>
+        <a href={boky} download>
+          More
+        </a>
       </figcaption>
     </div>
   );

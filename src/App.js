@@ -2,15 +2,19 @@ import React from "react";
 import "./App.css";
 import About from "./Components/About";
 import Home from "./Components/Home";
-import { Emailjs } from "./Components/Emailjs";
+import Team from "./Components/Team";
+import Load from "./Components/Load";
+import Dashboard from "./Components/Dashboard";
 
 function App() {
   return (
     <React.Fragment>
+      <Load />
       <div className="container">
-        <Home />
+        {/* <Home />
         <About />
-        <Emailjs />
+        <Team /> */}
+        <Dashboard />
       </div>
     </React.Fragment>
   );
