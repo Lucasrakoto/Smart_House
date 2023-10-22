@@ -1,6 +1,7 @@
 import React from "react";
 import lucas1 from "../../Assets/profil/1.png";
 import lucas2 from "../../Assets/profil/2.png";
+import { FaSignOutAlt, FaHome, FaLightbulb, FaIdCard } from "react-icons/fa";
 
 export default function DHome() {
   return (
@@ -9,10 +10,22 @@ export default function DHome() {
       <section className="led_state">
         <h2>State of your Led in different piece</h2>
         <ul className="list_led">
-          <li className="led_item">1</li>
-          <li className="led_item">2</li>
-          <li className="led_item">3</li>
-          <li className="led_item">4</li>
+          <li className="led_item">
+            <FaLightbulb className="jiro" />
+            <span>Piece 1</span>
+          </li>
+          <li className="led_item">
+            <FaLightbulb className="jiro" />
+            <span>Piece 2</span>
+          </li>
+          <li className="led_item">
+            <FaLightbulb className="jiro" />
+            <span>Piece 3</span>
+          </li>
+          <li className="led_item">
+            <FaLightbulb className="jiro" />
+            <span>Piece 4</span>
+          </li>
         </ul>
       </section>
       <section className="rfid_state">

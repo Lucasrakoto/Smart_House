@@ -660,7 +660,8 @@ section.sec_title {
   margin: 20px 0;
 }
 .list_led .led_item {
-  border: 2px solid #101b3b;
+  border: 3px solid #101b3b;
+  border-radius: 15px;
   width: 200px;
   padding: 30px;
 }
