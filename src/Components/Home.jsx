@@ -5,6 +5,8 @@ import logo from "../Assets/ispm.png";
 import logohome from "../Assets/logohome.jpg";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Dashboard";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Home(props) {
   const el = useRef(null);
@@ -52,17 +54,30 @@ export default function Home(props) {
     const pswd = "1234";
     if (username === name && mdp === pswd) {
       setIsLoggedIn(true);
+      toast.success("Welcome, you are connected !", {
+        position: "top-right",
+        autoClose: 3000, // Durée d'affichage en millisecondes
+      });
       setTimeout(() => {
         closeModal();
-        alert("Welcome  " + username);
+
+        // alert("Welcome  " + username);
         // props.setProps(true);
-      }, 2000);
+      }, 1500);
     } else {
-      alert("non nefa");
+      // alert("non nefa");
+      toast.error("Ouuuupsss, error", {
+        position: "top-right",
+        autoClose: 2000, // Durée d'affichage en millisecondes
+      });
     }
   };
   const logout = () => {
-    alert("See you " + username);
+    // alert("See you " + username);
+    toast.success("See you!, you are deconnected", {
+      position: "top-right",
+      autoClose: 2000, // Durée d'affichage en millisecondes
+    });
     setTimeout(() => {
       setIsLoggedIn(false);
       setUserName("");
@@ -71,7 +86,11 @@ export default function Home(props) {
   };
   const changeAo = () => {
     props.setProps();
-    alert(props.aove);
+    // alert(props.aove);
+    toast.success("You are in the dashboard ", {
+      position: "top-right",
+      autoClose: 3000, // Durée d'affichage en millisecondes
+    });
   };
   return (
     <div className="home">
