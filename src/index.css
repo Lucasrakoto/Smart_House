@@ -63,7 +63,7 @@ nav img {
   /* width: 40%; */
   width: max-content;
   height: 100%;
-  /* margin: 0 auto; */
+  margin: 0 auto;
 }
 .navbar li {
   position: relative;

@@ -7,6 +7,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/SendIcon';
+
 
 export default function Home(props) {
   const el = useRef(null);
@@ -15,22 +18,22 @@ export default function Home(props) {
   const [mdp, setMdp] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  useEffect(() => {
-    const typed = new Typed(el.current, {
-      strings: ["MODERN", "SMART ", "INTELLIGENT "],
-      startDelay: 300,
-      typeSpeed: 150,
-      backSpeed: 100,
-      backDelay: 100,
-      smartBackspace: true,
-      loop: true,
-      showCursor: false,
-      // cursorChar: "_",
-    });
-    return () => {
-      typed.destroy();
-    };
-  }, []);
+  // useEffect(() => {
+  //   const typed = new Typed(el.current, {
+  //     strings: ["MODERN", "SMART ", "INTELLIGENT "],
+  //     startDelay: 300,
+  //     typeSpeed: 150,
+  //     backSpeed: 100,
+  //     backDelay: 100,
+  //     smartBackspace: true,
+  //     loop: true,
+  //     showCursor: false,
+  //     // cursorChar: "_",
+  //   });
+  //   return () => {
+  //     typed.destroy();
+  //   };
+  // }, []);
 
   // resaka modal
   const showModal = () => {
@@ -96,22 +99,14 @@ export default function Home(props) {
     <div className="home">
       {/* section navbar */}
       <nav>
-        <figure>
-          <img src={logo} alt="" />
-        </figure>
         <ul className="navbar">
           <li>
             <a href="#_Home">Home</a>
           </li>
           <li>
-            <a href="#_About">About</a>
+            <a href="#_About">Settings</a>
           </li>
-          <li>
-            <a href="#_OurTeam">Our Team</a>
-          </li>
-          <li>
-            <a href="#_Contact">Contact Us</a>
-          </li>
+
           {isLoggedIn && (
             <li>
               <button onClick={changeAo}>Dashboard</button>
@@ -127,11 +122,6 @@ export default function Home(props) {
           <span ref={el}></span>
           <br /> <span>HOUSE</span>
         </h1>
-        <p>
-          Modern Security Systeme <br />
-          The future technology <br />
-          Project 3.0
-        </p>
         {isLoggedIn ? (
           <button onClick={logout} className="login">
             LOGOUT
@@ -157,29 +147,25 @@ export default function Home(props) {
               <img src={logohome} alt="" />
             </figure>
             {/* <form ref={form} onSubmit={sendEmail}> */}
-            <h1>Welcome to Smart House</h1>
+            <h1>Welcome</h1>
             <form onSubmit={onSingnin}>
               <input
                 type="text"
                 name="user_name"
-                placeholder="User name"
+                placeholder="E-mail adress"
                 className="_input"
                 onChange={handleChange}
                 value={username}
                 required
               />
-              <input
-                type="password"
-                name="user_email"
-                placeholder="Password"
-                className="_input"
-                onChange={handleMdpChange}
-                value={mdp}
-                required
-              />
-              <button type="submit" className="signin">
-                SIGN IN
-              </button>
+
+              {/* <button type="submit" className="signin">
+                SUBMIT
+              </button> */}
+
+              <Button variant="contained" endIcon={<SendIcon />} className="signin">
+                  SUBMIT
+              </Button>
 
               {/* <input type="submit" value="Send" /> */}
             </form>
